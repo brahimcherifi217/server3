@@ -9,4 +9,5 @@ route.get('/doctors', userController.getDoctors)
 route.post('/add-doctor', userController.addDoctor)
 route.get('/appointments', userController.appointmentDates)
 
+
 module.exports = route

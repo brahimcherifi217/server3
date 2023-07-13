@@ -38,10 +38,21 @@ const adminOptions = {
    rootPath: '/admin'
 }
 
+adminBro.registerAdapter(adminMongoose)
+const doctorOptions = {
+    resources: [
+        doctor,
+    ],
+   rootPath: '/doctor'
+}
 
 
+
+const doctorPanel = new adminBro(doctorOptions)
 const admin = new adminBro(adminOptions)
 const adminRoute = adminExpress.buildRouter(admin)
+const doctorRoute = adminExpress.buildRouter(doctorPanel)
+app.use(doctorPanel.options.rootPath, doctorRoute)
 app.use(admin.options.rootPath, adminRoute)
 
 app.use(bodyParser.json())

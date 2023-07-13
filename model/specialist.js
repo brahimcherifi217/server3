@@ -4,6 +4,9 @@ const schema = mongoose.Schema
 const specialistSchema = new schema ({
     name : { 
         type : String
+    },
+    img : { 
+        type : String
     }
 })
 

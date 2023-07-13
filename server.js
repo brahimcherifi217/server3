@@ -27,6 +27,7 @@ const adminMongoose = require('@admin-bro/mongoose')
 const user = require('./model/user')
 const doctor = require('./model/doctors')
 const specialist = require('./model/specialist')
+const appointment = require('./model/appointment')
 
 adminBro.registerAdapter(adminMongoose)
 const adminOptions = {
@@ -35,15 +36,16 @@ const adminOptions = {
         doctor,
         specialist
     ],
-   rootPath: '/admin'
+    rootPath: '/admin'
 }
 
 adminBro.registerAdapter(adminMongoose)
 const doctorOptions = {
     resources: [
         doctor,
+        appointment,
     ],
-   rootPath: '/doctor'
+    rootPath: '/doctor'
 }
 
 
